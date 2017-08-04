@@ -10,4 +10,6 @@ authRoutes.get(
 
 authRoutes.get('/callback', passport.authenticate('google'));
 
+
+
 module.exports = authRoutes;
