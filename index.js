@@ -4,6 +4,9 @@ const keys = require('./config/keys');
 //intialize passport
 require('./services/passport');
 
+//intialize mongoose model
+require('./models/User')
+
 const authRoutes = require('./routes/authRoutes');
 mongoose.connect(keys.mongoURI);
 
