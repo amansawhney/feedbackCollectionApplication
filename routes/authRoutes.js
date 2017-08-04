@@ -8,7 +8,15 @@ authRoutes.get(
     }),
 );
 
-authRoutes.get('/callback', passport.authenticate('google'));
+authRoutes.get('/callback', passport.authenticate('google', {
+    successRedirect: "/api/currentUser",
+    failureRedirect: ''
+}));
+
+authRoutes.get('/logout', (req, res) => {
+    req.logOut();
+    res.send(req.user);
+})
 
 
 
